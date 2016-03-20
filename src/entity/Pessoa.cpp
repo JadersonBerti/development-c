@@ -1,5 +1,7 @@
-#include "Pessoa.h";
-#include <string.h>
+#include "Pessoa.h"
+
+#include <sstream>
+#include <string>
 
 using namespace std;
 
@@ -26,9 +28,23 @@ void Pessoa::setNome(string nome){
 }
 
 string Pessoa::getSobrenome(){
-	return sobrenome;
+	return this->sobrenome;
 }
 
 void Pessoa::setSobrenome(string sobrenome){
 	this->sobrenome = sobrenome;
+}
+
+bool Pessoa::isEmpty(){
+	return this->nome == "" && this->sobrenome == "";
+}
+
+bool Pessoa::equals(int id){
+	return this->id == id;
+}
+
+string Pessoa::toString(){
+	stringstream conversor;
+	conversor << this->id;
+	return "id:" + conversor.str() +  ";nome:" + this->nome + ";sobrenome:" + this->sobrenome;
 }

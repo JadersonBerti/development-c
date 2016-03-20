@@ -18,6 +18,9 @@ class Pessoa {
 		void setNome(string nome);
 		string getSobrenome();
 		void setSobrenome(string nome);
+		string toString();
+		bool equals(int id);
+		bool isEmpty();
 
 		friend ostream& operator<<(ostream& os, const Pessoa& p){
 			os << p.id << "&" << p.nome << "&" << p.sobrenome << "\n";
